@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --background: #07111f;
+  --surface: #101e31;
+  --surface-light: #172943;
+  --blue: #168cff;
+  --blue-light: #42b4ff;
+  --text: #f1f6ff;
+  --muted: #91a4bd;
+  --border: #243750;
+  --green: #00d68f;
+  --red: #ff5368;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--blue-light);
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--blue);
+  color: white;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.blue-button {
+  background: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 12px 20px;
+  font-weight: 600;
+}
+
+.blue-button:hover {
+  background: var(--blue-light);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 14px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+}
