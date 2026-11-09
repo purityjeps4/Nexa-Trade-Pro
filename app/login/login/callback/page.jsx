@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -46,19 +45,9 @@ export default function DerivCallback() {
 
         const result = await response.json();
 
-        if (!response.ok || !result.access_token) {
+        if (!response.ok || !result.success) {
           throw new Error(result.error || "Could not connect your account.");
         }
-
-        sessionStorage.setItem(
-          "nexa_deriv_access_token",
-          result.access_token
-        );
-
-        sessionStorage.setItem(
-          "nexa_deriv_token_expiry",
-          String(Date.now() + result.expires_in * 1000)
-        );
 
         sessionStorage.removeItem("nexa_pkce_verifier");
         sessionStorage.removeItem("nexa_oauth_state");
